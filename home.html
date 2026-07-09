@@ -1,0 +1,83 @@
+ 
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Findit</title>
+      <link rel="stylesheet" href="home.css">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+<body>
+      <h1 style="text-align: center;color: black;">Find<span style =
+            "color:hsl(0 ,75%, 52%);">it.</span></h1>
+
+
+
+
+</div>
+
+
+    <nav class = "pages">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href = "itemlist.html">Find</a></li>
+            <li><a href="claimed.html">Claimed</a></li>
+        </ul>
+    </nav>
+    <br>
+    <br>
+    <br>
+<div class="sheet">
+    <div class="grabber"></div>
+
+
+    <h2 style="margin-bottom:20px; letter-spacing:-1px;">
+        New Report
+    </h2>
+
+
+    <div class="input-box">
+        <label>Item Name: </label>
+        <input type="text" id="itemName" placeholder="Whats the name?">
+    </div>
+
+
+   
+        <div class="input-box" style="flex:1">
+            <label>Category: </label>
+            <select id="category">
+                <option value="Supplies">School Supplies</option>
+                <option value="Tech">Tech</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+
+        <div class="input-box" style="flex:1">
+            <label>Location: </label>
+            <input type="text" id="location" placeholder="Where?">
+        </div>
+   
+
+    <div class="input-box">
+        <label>Description:</label>
+        <input style= "width: 300px; ;"  type="text" id="description" placeholder="Details...">
+    </div>
+<div>
+            <button class="img-btn" onclick="document.getElementById('photo-input').click()">Add Photo</button>
+
+
+            <button class = "button" onclick = "postButtonClick()">Post</button>
+            </div>
+</div>
+    <button id="newReport" onclick = "buttonclicky()"style = "display: flex; flex-direction: column;">New Report</button>
+</div>
+
+
+
+<script src="home.js"></script>
+</body>
+</html>
+
