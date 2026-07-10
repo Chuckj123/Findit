@@ -27,6 +27,7 @@ app.post('/add', (req, res) => {
 
 app.get('/get', (req, res) => {
     res.json(readData());
+    
 });
 
 app.listen(5000, () => console.log('Database running on port 5000'));

@@ -3,7 +3,7 @@ function buttonclicky(){
 }
 
 function postButtonClick(){
-    document.getElementsByClassName(`sheet`)[0].style.display = `block`;
+    document.getElementsByClassName(`sheet`)[0].style.display = `none`;
 
 
     //inputboxythingy
@@ -26,12 +26,13 @@ function postButtonClick(){
 }
 
 // //loginpage
-const nameS = document.getElementById('name').value;
-const emailS = document.getElementById('emailS').value;
-const passwordS = document.getElementById('passwordS').value;
-const pn = document.getElementById('pnS').value;
-const schoolS = document.getElementById('schoolS').value;
-const zipS = document.getElementById('zipS').value;
-
+function loginbutton(){
+    const nameS = document.getElementById('name').value;
+    const emailS = document.getElementById('emailS').value;
+    const passwordS = document.getElementById('passwordS').value;
+    const pn = document.getElementById('pnS').value;
+    const schoolS = document.getElementById('schoolS').value;
+    const zipS = document.getElementById('zipS').value;
+}
 
 
