@@ -3,6 +3,7 @@ body {
     background: linear-gradient(135deg, #cdcfcf, #ffffff);
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
+    margin-bottom: 150px;
 }
 
 
@@ -54,11 +55,14 @@ h1 {
     background-color: rgb(255, 255, 255);
     padding: 30px;
     border-radius: 16px;
-    margin-top: 20px;
-    margin-left: 700px;
-    margin-right: 700px;
+    margin: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    display:block;
+    display:none;
+    min-width: 200px;
+    max-width: 700px;
+    text-align: center;
 }
 
 
@@ -87,6 +91,7 @@ h1 {
     font-size: 15px;
     outline: none;
     transition: border-color 0.2s ease;
+    min-width: none;
 }
 
 
