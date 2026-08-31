@@ -20,17 +20,44 @@
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 
-document.addEventListener("DOMContentLoaded", async function() {
+  
+  import{getDatabase, set, get, ref, push}from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
+  const database = getDatabase();
+
+
+  async function displayObjects(){
+    const category = await get(ref(database, `schools/school/items/Tech`))
+    category.forEach(element => {
+      console.log(element.key);
+      console.log(element.val());
+      const description = element.val().Description;
+      const item = element.val().Item;
+      const location = element.val().Location;
+      const object = document.createElement("div");
+      object.classList.add("lostObjects");
+      object.innerHTML = `<h1 id = 'name'>${item}</h1><h1 id = 'category'>category</h1><h1 id = 'location'>${location}</h1><h1 id = 'description'>${description}</h1>`;
+      document.getElementById(`displayItems`).appendChild(object);
+    });
+
+  }
+  displayObjects()
+  
+//End of Firebase
+
+// document.addEventListener("DOMContentLoaded", async function() {
     
-await setTimeout(async ()=>{
-    console.log(`HTML loaded :)`)
-    try{
-    const response = await fetch('http://localhost:5000/get'); 
-    const data = await response.json();
-    console.log(data);
-    }
-    catch{
-        console.log("failed");
-    }
-},2000);//delay in milliseconds btw//
-});
+// await setTimeout(async ()=>{
+//     console.log(`HTML loaded :)`)
+//     try{
+//     const response = await fetch('http://localhost:5000/get'); 
+//     const data = await response.json();
+//     console.log(data);
+//     }
+//     catch{
+//         console.log("failed");
+//     }
+// },2000);//delay in milliseconds btw//
+// });
+
+
+
