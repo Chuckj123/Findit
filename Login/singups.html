@@ -9,30 +9,37 @@
         rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
         rel="stylesheet">
-
+        
     </head>
     <body>
+        <div class = "bigContainer">
         <div class = "header">
             <br>
             <h1 style="margin-top: 50px;scale: 200%;text-align: center;color: black;">Find<span style =
             "color:hsl(0, 75%, 52%);">it.</span></h1>
             <h2 style = "scale: 75%; margin-top: 25px;text-align: center; font-family: 'Poppins',
             sans-serif;">A place to find lost things</h2>
-        </div>
             <div class="app-icon" style="display: flex; justify-content: center;
             align-items: center; height: 90px;">
                 <p class="material-icons"style="margin-top:150px; scale: 100%;font-size: 100px; color:
             hsl(0, 75%, 52%);;">radar</p>
-       
-        </div>
+       </div>
+        
         <br>
         <form action = "home.html">
-            <div class = "container"><span style = "font-family: 'Poppins',
+        </form>
+        </div>
+        <div class = "container"><span style = "font-family: 'Poppins',
             sans-serif;text-align: center;">
        
             <div class = "question">
                 <label>Full Name:</label><br>
                 <input id = "nameS" type="text" placeholder="Enter your Full Name"style = "width:
+                250px; padding: 5px; border-radius : 7px;"required>
+            </div>
+            <div class = "question">
+                <label>Password:</label><br>
+                <input id = "passwordS" type="password" placeholder="Enter your Password"style = "width:
                 250px; padding: 5px; border-radius : 7px;"required>
             </div>
             <div class = "question">
@@ -58,9 +65,12 @@
                 <input id = "zipS"type="text" placeholder="Zip code"style = "width: 100px;
                 padding: 5px; border-radius: 7px;text-align: center;"required>
             </div>
+    
             <div>
                 <button class="button" onclick = "loginbutton()" style="width: 400px;" type = “submit”>Submit</button>
             </div>
+    </div>
+        
 
 
 
