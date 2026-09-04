@@ -9,6 +9,7 @@
   const firebaseConfig = {
     apiKey: "AIzaSyDITGL_1FIONA5lZAkC_524ZQAx84Meb4M",
     authDomain: "realfindit-9652f.firebaseapp.com",
+    databaseURL: "https://realfindit-9652f-default-rtdb.firebaseio.com",
     projectId: "realfindit-9652f",
     storageBucket: "realfindit-9652f.firebasestorage.app",
     messagingSenderId: "315956524199",
@@ -26,19 +27,23 @@
 
 
   async function displayObjects(){
-    const category = await get(ref(database, `schools/school/items/Tech`))
-    category.forEach(element => {
+    const categories = await get(ref(database, `schools/school/items`));
+    categories.forEach(async element => {
       console.log(element.key);
       console.log(element.val());
-      const description = element.val().Description;
-      const item = element.val().Item;
-      const location = element.val().Location;
-      const object = document.createElement("div");
-      object.classList.add("lostObjects");
-      object.innerHTML = `<h1 id = 'name'>${item}</h1><h1 id = 'category'>category</h1><h1 id = 'location'>${location}</h1><h1 id = 'description'>${description}</h1>`;
-      document.getElementById(`displayItems`).appendChild(object);
+      const categoryName = element.key;
+      const category = await get(ref(database, `schools/school/items/${categoryName}`));
+      category.forEach(elements => {      
+        const description = elements.val().Description;
+        const item = elements.val().Item;
+        const location = elements.val().Location;
+        const object = document.createElement("div");
+        object.classList.add("lostObjects");
+        object.innerHTML = `<label id = 'name'>${item}</label><br><label id = 'category'>${categoryName}</label><br><label id = 'location'>${location}</label><br><label id = 'description'>${description}</label>`;
+        document.getElementById(`displayItems`).appendChild(object);})
+        
+        
     });
-
   }
   displayObjects()
   
