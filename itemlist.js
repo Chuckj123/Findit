@@ -28,24 +28,23 @@
 
   async function displayObjects(){
     const categories = await get(ref(database, `schools/school/items`));
-    categories.forEach(async element => {
-      console.log(element.key);
-      console.log(element.val());
-      const categoryName = element.key;
-      const category = await get(ref(database, `schools/school/items/${categoryName}`));
-      category.forEach(elements => {      
-        const description = elements.val().Description;
-        const item = elements.val().Item;
-        const location = elements.val().Location;
+    const displayItems = document.getElementById("displayItems");
+
+    categories.forEach(category => {
+      const categoryName = category.key;
+      category.forEach(elements => {
+        const itemData = elements.val();
+        const description = itemData.Description;
+        const item = itemData.Item;
+        const location = itemData.Location;
         const object = document.createElement("div");
         object.classList.add("lostObjects");
-        object.innerHTML = `<label id = 'name'>${item}</label><br><label id = 'category'>${categoryName}</label><br><label id = 'location'>${location}</label><br><label id = 'description'>${description}</label>`;
-        document.getElementById(`displayItems`).appendChild(object);})
-        
-        
+        object.innerHTML = `<label>${item}</label><br><label>${categoryName}</label><br><label>${location}</label><br><label>${description}</label>`;
+        displayItems.appendChild(object);
+      });
     });
   }
-  displayObjects()
+  displayObjects();
   
 //End of Firebase
 
