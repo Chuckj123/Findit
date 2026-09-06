@@ -148,9 +148,9 @@ h1 {
 
 
 .button:hover {
-    background: #1147ab;
+    background: hsl(0, 75%, 52%);
     color: white;
-    border-color: #1147ab;
+    border-color: hsl(0, 75%, 52%);
 }
 
 
@@ -214,5 +214,16 @@ h1 {
 #newReport:active {
     transform: scale(0.95);
 }
+.find-item {
+    font-size: 20px;
+    color: #333333;
+    margin-bottom: 10px;
 
-
+    
+}
+.item-label{
+    font-size: 20px;
+    color: #333333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}

@@ -37,15 +37,32 @@
         const description = itemData.Description;
         const item = itemData.Item;
         const location = itemData.Location;
+        let isClaimed = itemData.Claimed;
         const object = document.createElement("div");
-        object.classList.add("lostObjects");
-        object.innerHTML = `<label>${item}</label><br><label>${categoryName}</label><br><label>${location}</label><br><label>${description}</label>`;
-        displayItems.appendChild(object);
+        if(!isClaimed){
+          object.classList.add("lostObjects");
+          object.innerHTML = 
+          `
+          <label class = "find-item" id = "item-name"><span class = "item-label">Name: </span> ${item}</label><br>
+          <label class = "find-item" id = "item-category"><span class = "item-label">Category: </span> ${categoryName}</label><br>
+          <label class = "find-item" id = "item-location"><span class = "item-label">Location: </span> ${location}</label><br>
+          <label class = "find-item" id = "item-descriptions"><span class = "item-label">Description: </span> ${description}</label><br>
+          <button id = "claimBtn"  class = "button";'${categoryName}')">Claim</button>`
+          displayItems.appendChild(object); 
+        }
+        function claimItem(){
+          isClaimed = true;
+        }
+        document.getElementById("claimBtn").addEventListener("click", claimItem);
       });
-    });
+
+    })
+    
   }
   displayObjects();
+
   
+
 //End of Firebase
 
 // document.addEventListener("DOMContentLoaded", async function() {

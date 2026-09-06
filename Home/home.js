@@ -21,7 +21,7 @@
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 
-  import{getDatabase, set, get, ref, push}from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
+  import{getDatabase, set, get, ref, push} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
   const database = getDatabase();
 
 //End of Firebase
@@ -41,6 +41,7 @@ document.getElementById("postButton").onclick = function(){
     const category = document.getElementById('category').value;
     const location = document.getElementById('location').value;
     const description = document.getElementById('description').value;
+    let isClaimed = false;
     const data = {
         itemName,
         category,
@@ -51,7 +52,8 @@ document.getElementById("postButton").onclick = function(){
     push(ref(database, `schools/school/items/${category}`),{
         Item: itemName,
         Location: location,
-        Description: description
+        Description: description,  
+        CLaimed: isClaimed 
     }
 
     )
