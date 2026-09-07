@@ -44,7 +44,7 @@ async function displayClaimedObjects(){
         object.innerHTML = 
         `<label class = "find-item" id = "item-name"><span class = "item-label">Name: </span> ${item}</label><br>
         <label class = "find-item" id = "item-category"><span class = "item-label">Category: </span> ${categoryName}</label><br>
-        <label class = "find-item" id = "item-location"><span class = "item-label">Location: </span> ${location}</label><br>
+        <label class = "find-item" id = "item-location"><spanx class = "item-label">Location: </span> ${location}</label><br>
         <label class = "find-item" id = "item-descriptions"><span class = "item-label">Description: </span> ${description}</label><br>`;
   
         displayItems.appendChild(object); 

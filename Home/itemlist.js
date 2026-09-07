@@ -1,6 +1,7 @@
  // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-analytics.js";
+  import{getDatabase, set, get, ref, push, update}from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -11,7 +12,7 @@
     authDomain: "realfindit-9652f.firebaseapp.com",
     databaseURL: "https://realfindit-9652f-default-rtdb.firebaseio.com",
     projectId: "realfindit-9652f",
-    storageBucket: "realfindit-9652f.firebasestorage.app",
+    storageBucket: "realfindit-9652f.firebasestorage.app",  
     messagingSenderId: "315956524199",
     appId: "1:315956524199:web:4c910d2adbc3d2681d1782",
     measurementId: "G-PWX9Z4P5J7"
@@ -22,7 +23,7 @@
   const analytics = getAnalytics(app);
 
   
-  import{getDatabase, set, get, ref, push}from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
+
   const database = getDatabase();
 
 
@@ -33,12 +34,14 @@
     categories.forEach(category => {
       const categoryName = category.key;
       category.forEach(elements => {
+        const itemKey = elements.key;
         const itemData = elements.val();
         const description = itemData.Description;
         const item = itemData.Item;
         const location = itemData.Location;
         let isClaimed = itemData.Claimed;
-        const object = document.createElement("div");w
+        let iref = ref(database, `schools/school/items/${categoryName}/${itemKey}`)
+        const object = document.createElement("div");
         if(!isClaimed){
           object.classList.add("lostObjects");
           object.innerHTML = 
@@ -47,21 +50,21 @@
           <label class = "find-item" id = "item-category"><span class = "item-label">Category: </span> ${categoryName}</label><br>
           <label class = "find-item" id = "item-location"><span class = "item-label">Location: </span> ${location}</label><br>
           <label class = "find-item" id = "item-descriptions"><span class = "item-label">Description: </span> ${description}</label><br>
-          <button id = "claimBtn"  class = "button";'${categoryName}')">Claim</button>`
+          <button class = "button";'${categoryName}')">Claim</button>`
           displayItems.appendChild(object); 
         }
-        function claimItem(){
-          isClaimed = true;
-        }
-        document.getElementById("claimBtn").addEventListener("click", claimItem);
-      });
+        const btn = object.querySelector(".claimBtn");
+        btn.addEventListener("click", () => {1
+          set(iref, { ...itemData, Claimed: true });
+        });
+
 
     })
     
-  }
+  })
+}
   displayObjects();
 
-  
 
 //End of Firebase
 

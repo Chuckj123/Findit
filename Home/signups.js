@@ -31,4 +31,13 @@ function loginbutton(){
     const Phone = document.getElementById("pnS").value;
     const School = document.getElementById("schoolS").value;
     const Zip = document.getElementById("zipS").value;
+
+    push(ref(database, `schools/school/users`),{
+      [Name]:{
+        email: Email,
+        phone: Phone,
+        school: School,
+        zip: Zip
+      }
+    })
 }
