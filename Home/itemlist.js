@@ -38,7 +38,7 @@
         const item = itemData.Item;
         const location = itemData.Location;
         let isClaimed = itemData.Claimed;
-        const object = document.createElement("div");
+        const object = document.createElement("div");w
         if(!isClaimed){
           object.classList.add("lostObjects");
           object.innerHTML = 

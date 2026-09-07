@@ -26,20 +26,9 @@ import{getDatabase, set, get, ref, push}from "https://www.gstatic.com/firebasejs
 const database = getDatabase();
 
 function loginbutton(){
-    const name = document.getElementById("nameS").value;
-    const password = document.getElementById("passwordS")
-    const email = document.getElementById("emailS").value;
-    const phone = document.getElementById("pnS").value;
-    const school = document.getElementById("schoolS").value;
-    const zip = document.getElementById("zipS").value;
-
-    push(ref(database, `shools/${school}/users`),{
-        [Name]:{
-          Password: password,
-          Email: email,
-          Phone: phone,
-          School: school,
-          Zip: zip
-        }
-    })
+    const Name = document.getElementById("nameS").value;
+    const Email = document.getElementById("emailS").value;
+    const Phone = document.getElementById("pnS").value;
+    const School = document.getElementById("schoolS").value;
+    const Zip = document.getElementById("zipS").value;
 }

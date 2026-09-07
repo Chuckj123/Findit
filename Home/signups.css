@@ -1,5 +1,4 @@
 .bigContainer{
-    position: fixed;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -7,7 +6,6 @@
      
 }
 .container {
-    position: fixed;
     left: 50%;
     max-width: 400px;
     margin: auto;
@@ -19,7 +17,6 @@
     
 }
 .header{
-    position: fixed;
     right: 50%;
     flex: 1;
   
