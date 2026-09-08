@@ -55,7 +55,7 @@
         }
         const btn = object.querySelector(".claimBtn");
         btn.addEventListener("click", () => {1
-          set(iref, { ...itemData, Claimed: true });
+          set(iref, { ...itemData, CLaimed: true });
         });
 
 
